@@ -11,6 +11,16 @@ export const getBooks = async (email) => {
     });
     return response.data;
 };
+
+export const getBookSearch = async (search) => {
+    const response = await axios({
+        method: "get",
+        url: baseUrl + `books/all?search=${search}`,
+
+    });
+    return response.data;
+};
+
 export const getCart = async (email) => {
     const response = await axios({
         method: "get",

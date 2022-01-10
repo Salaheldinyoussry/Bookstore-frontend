@@ -13,6 +13,11 @@ function CreateBook(props) {
     const [thres, setThres] = useState('');
 
     const [publisher, setPublisher] = useState('');
+    const [p_name, setP_name] = useState('');
+    const [p_telephone, setP_telephone] = useState('');
+
+
+
     const [category, setCategory] = useState('Science');
     const [noOFCopies, setNOOfCopies] = useState('');
     const [authors, setAuthours] = useState([]);
@@ -35,7 +40,9 @@ function CreateBook(props) {
             thres : thres ,
             category: category, 
             noOFCopies: noOFCopies,
-            authors: authors
+            authors: authors ,
+            p_name : p_name,
+            p_telephone : p_telephone,
 
        }
        console.log(authors);
@@ -86,6 +93,8 @@ function CreateBook(props) {
                         setPrice(e.target.value)
                     }}
                 />
+
+
                 <text className="text-label-1">publisher</text>
                 <input
                   value={publisher}
@@ -93,6 +102,27 @@ function CreateBook(props) {
                     id="floatingPassword"
                     onChange={(e) => {
                         setPublisher(e.target.value)
+                    }}
+                />
+
+
+                <text className="text-label-1">publisher address</text>
+                <input
+                    value={p_name}
+                    class="form-control m-0"
+                    id="floatingPassword"
+                    onChange={(e) => {
+                        setP_name(e.target.value)
+                    }}
+                />
+
+                <text className="text-label-1">publisher telephone</text>
+                <input
+                    value={p_telephone}
+                    class="form-control m-0"
+                    id="floatingPassword"
+                    onChange={(e) => {
+                        setP_telephone(e.target.value)
                     }}
                 />
 

@@ -2,12 +2,13 @@
 import React, { useRef, useState, useEffect} from "react";
 import { toast } from "react-toastify";
 import { MDBListGroupItem ,MDBListGroup,MDBCard, MDBCardBody, MDBCardTitle, MDBCardText, MDBBtn } from 'mdb-react-ui-kit';
-import { getBooks , cartApi} from './common/BookApi';
+import { getBooks, cartApi, getBookSearch} from './common/BookApi';
 function ShopingCart(props) {
    
     const [show, setShow] = useState(false);
     const [books, setBooks] = useState([]);
     
+    const [ser, setSer] = useState('');
 
 
 //e, password, last name, first name, e-mail address, phone number, and shipping address.
@@ -25,7 +26,28 @@ function ShopingCart(props) {
         })
 
     }
+    const search = ()=>{
+        getBookSearch(ser).then(bs => {
+            console.log(bs)
+            let all = [];
+            bs.forEach(e => {
+                let obj = e.value[0];
+                let auths = '';
+                e.value.forEach(a => {
+                    auths += ' ' + a.name + '-';
+                })
+                auths = auths.slice(0, -1)
+                obj.auths = auths;
+                all.push(obj);
+            });
+            setBooks(all)
+            console.log(all);
 
+        }).catch(e => {
+
+            toast.error(e.response.data.message || "Error getting books");
+        })
+    }
 
     useEffect(() => {
 
@@ -68,10 +90,11 @@ function ShopingCart(props) {
                             class="form-control m-0"
                             id="floatingPassword"
                             onChange={(e) => {
-                                // setEmail(e.target.value)
+                                 setSer(e.target.value)
                             }}
+                            value={ser}
                         />
-                        <button className='btn' >Search </button>
+                        <button className='btn' onClick={search} >Search </button>
 
                     </div>
                     : ''}

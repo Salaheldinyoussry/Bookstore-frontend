@@ -32,7 +32,7 @@ function Signup(props) {
 
         }).catch(e=>{
             console.log(e)
-            toast.error(e.response.data.err || "Error saving user");
+            toast.error(e.response.data.err.sqlMessage || "Error saving user");
         })
     }
     return (
