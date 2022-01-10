@@ -1,0 +1,87 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+.logDiv {
+    width: 40%;
+    margin: auto;
+    margin-top: 10vh;
+    padding: 20px;
+    text-align: left;
+      box-shadow: rgb(149 157 165 / 20%) 0px 8px 24px;
+      margin-bottom: 20px;
+}
+
+#btn{
+     font-family: 'DM Sans'; 
+    font-size: 20px;
+    font-weight: 400 !important;
+    color: #FFFFFF;
+    background-color: #2C40CE !important;
+    border-color: #2C40CE !important;
+    border: 1px solid;
+    margin-left: 40% !important;
+    margin-top: 70px;
+    min-width: 109px;
+}
+#btn:hover{
+      color: #2C40CE !important;
+    background-color: #FFFFFF !important;  
+}
+.checkbtn{
+     font-family: 'DM Sans'; 
+    font-size: 20px;
+    font-weight: 400 !important;
+    color: #FFFFFF;
+    background-color: #2C40CE !important;
+    border-color: #2C40CE !important;
+    border: 1px solid;
+    margin-left: 40% !important;
+    margin-top: 70px;
+    min-width: 109px;
+}
+.checkbtn:hover{
+      color: #2C40CE !important;
+    background-color: #FFFFFF !important;  
+}
+
+.checkCont {
+    padding: 20px;
+}
+
+
+.book{
+  border: black 1px solid;
+  margin: 10px;
+  padding: 20px;
+  width: 400px;
+}
+.cont{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 20px;
+}
+table.pageTable {
+    width: 80%;
+    padding: 5%;
+    margin: 2%;
+}
+.btn-default{
+  border: none !important;
+}
+.anaBox{
+  padding: 30px;
+    border: 1px solid rgba(0,0,0,.3);
+    margin: 30px;
+    text-align: left;
+    box-shadow: 0 8px 24px rgb(149 157 165 / 20%);
+}
